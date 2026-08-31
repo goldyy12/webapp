@@ -7,9 +7,10 @@ export async function fetchStores(
   city: string,
   street?: string,
 ): Promise<Store[]> {
-  const res = await axios.get<Store[]>(API_URL, {
+  const res = await axios.get<Store[]>(`${API_URL}/api/stores`, {
     params: { city, street: street || undefined },
   });
+
   return res.data;
 }
 
@@ -20,11 +21,13 @@ export async function createStore(store: {
   type?: string;
   content?: string;
 }): Promise<Store> {
-  const res = await axios.post<Store>(API_URL + "/add", store);
+  const res = await axios.post<Store>(`${API_URL}/api/stores/add`, store);
+
   return res.data;
 }
 
 export async function fetchStoreById(id: number): Promise<Store> {
-  const res = await axios.get<Store>(`${API_URL}/${id}`);
+  const res = await axios.get<Store>(`${API_URL}/api/stores/${id}`);
+
   return res.data;
 }
