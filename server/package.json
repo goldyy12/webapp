@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "prisma generate && tsc",
-    "start": "prisma migrate deploy && node dist/server.js",
-    "dev": "ts-node-dev --respawn --transpile-only server.ts"
+    "start": "prisma migrate deploy && node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only index.ts"
   },
   "keywords": [],
   "author": "",
