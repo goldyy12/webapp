@@ -11,9 +11,11 @@ export default function AddStore() {
   const [city, setCity] = useState("");
   const [type, setType] = useState("");
   const [content, setContent] = useState("");
-
   const mutation = useMutation({
     mutationFn: createStore,
+    onError: (error) => {
+      console.error("ADD STORE ERROR:", error);
+    },
   });
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
