@@ -1,0 +1,86 @@
+.home-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 24px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.search-bar select,
+.search-bar input {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  background: var(--color-surface);
+}
+
+.search-bar select {
+  flex: 0 0 auto;
+}
+
+.search-bar input {
+  flex: 1;
+}
+
+.search-bar button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  opacity: 0.9;
+}
+
+.form-message.error {
+  color: var(--color-danger);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.status-text {
+  color: var(--color-ink-soft);
+  font-size: 14px;
+}
+
+.store-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.store-card {
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.store-card:hover {
+  border-color: var(--color-accent);
+}
+
+.store-card .store-name {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.store-card .store-meta {
+  color: var(--color-ink-soft);
+  font-size: 14px;
+}

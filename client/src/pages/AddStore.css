@@ -1,0 +1,47 @@
+.form-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 24px;
+}
+
+.store-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.store-form input,
+.store-form select {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  background: var(--color-surface);
+}
+
+.store-form button {
+  margin-top: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.store-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-message.success {
+  color: var(--color-success);
+  font-size: 14px;
+}
+
+.form-message.error {
+  color: var(--color-danger);
+  font-size: 14px;
+}
