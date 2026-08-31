@@ -24,8 +24,9 @@ export default function StoreDetails() {
   return (
     <div className="details-card">
       <h1 className="details-title">{store.name}</h1>
-      <p className="details-meta">Rruga {store.address}</p>
-      <p className="details-meta">{store.city}</p>
+      <p className="details-meta">
+        Rruga {store.address}, {store.city}
+      </p>
       {store.type && <span className="details-type">{store.type}</span>}
       {store.content && <p className="details-content">{store.content}</p>}
     </div>
