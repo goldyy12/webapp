@@ -9,6 +9,10 @@ const CITIES = ["Prishtina", "Ferizaj", "Gjilan", "Prizren", "Peja"];
 export default function Home() {
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
+  const [submitted, setSubmitted] = useState<{
+    city: string;
+    street: string;
+  } | null>(null);
   const [searchTriggered, setSearchTriggered] = useState(false);
   const navigate = useNavigate();
 
@@ -16,17 +20,19 @@ export default function Home() {
     data: stores = [],
     isFetching,
     error,
-    refetch,
   } = useQuery({
-    queryKey: ["stores", city, street],
-    queryFn: () => fetchStores(city, street),
-    enabled: false,
+    queryKey: ["stores", submitted?.city, submitted?.street],
+    queryFn: () => fetchStores(submitted!.city, submitted!.street),
+    enabled: !!submitted?.city,
   });
 
   function handleSearch() {
     setSearchTriggered(true);
-    if (!city) return;
-    refetch();
+    if (!city) {
+      setSubmitted(null);
+      return;
+    }
+    setSubmitted({ city, street });
   }
 
   function handleClick(id: number) {
